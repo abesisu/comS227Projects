@@ -1,0 +1,33 @@
+//
+// prints out all primes between 1 and max, where max is
+// provided in the scope
+//
+
+n = 2;
+while (n < max)
+{
+  if (isPrime(n))
+  {
+    output(n);
+  }
+  else {}
+  n = n + 1;
+}
+
+function isPrime(n)
+{
+  d = 2;
+  possible = 1;  // we have boolean expressions, but not boolean variables
+
+  while (!(n < d * d) && possible == 1)
+  {
+    remainder = n - d * (n / d);  // we don't have a mod operator
+    if (remainder == 0)
+    {
+      possible = 0; // can't be prime
+    }
+    else {}       // else block always required
+    d = d + 1;
+  }
+  return possible; // 1 if prime, 0 if not
+}
